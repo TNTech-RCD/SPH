@@ -28,14 +28,6 @@ THE SOFTWARE.
 #include <stdlib.h>
 #include "ogl_utils.h"
 
-inline void check()
-{
-    GLenum err = glGetError();
-    if(err != GL_NO_ERROR) {
-        printf("GL Error: %d\n", err);
-        exit(EXIT_FAILURE);
-    }
-}
 
 void show_program_log(GLuint program)
 {

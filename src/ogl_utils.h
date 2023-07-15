@@ -31,7 +31,15 @@ THE SOFTWARE.
   #include "egl_utils.h"
 #endif
 
-inline void check();
+//inline void check();
+inline void check()
+{
+    GLenum err = glGetError();
+    if(err != GL_NO_ERROR) {
+        printf("GL Error: %d\n", err);
+        exit(EXIT_FAILURE);
+    }
+}
 void showlog(GLint shader);
 void show_program_log(GLuint program);
 void compile_shader(GLuint shader, const char *file_name);
