@@ -47,8 +47,11 @@ void showlog(GLint shader)
 
 void compile_shader(GLuint shader, const char *file_name)
 {
+    //int rank;
     // Read shader source from file_name
     FILE *fh = fopen(file_name, "r");
+    //MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+    //fprintf(stderr, "Looking for shader %s on node %d\n", file_name, rank);
     if(!fh) {
         printf("Error: Failed to open shader\n");
     }
