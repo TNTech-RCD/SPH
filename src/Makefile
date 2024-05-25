@@ -1,5 +1,5 @@
 CC=mpicc
-CLIBS= -L/usr/local/lib -lglfw -lGL -lGLU -lX11 -lGLEW -lXxf86vm -lXrandr -lXi -lfreetype -lm -lblink1
+CLIBS= -L/usr/local/lib -L../blink1-tool/ -lglfw -lGL -lGLU -lX11 -lGLEW -lXxf86vm -lXrandr -lXi -lfreetype -lm -lblink1 -Wl,-rpath='$$ORIGIN/../blink1-tool/'
 CINCLUDES= -I/usr/include/freetype2 -I../blink1-tool
 CFLAGS= -DGLFW -O3 -ffast-math -I/usr/local/include -I/usr/include/libdrm -g
 

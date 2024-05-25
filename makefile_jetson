@@ -1,7 +1,8 @@
 all:
 	mkdir -p bin
 	OS=linux make -C blink1-tool
+	cp blink1-tool/libblink1.so src/
 	make -C src/
 clean:
 	rm -f ./sph.out
-	rm -f ./*.o
+	make clean -C src/
