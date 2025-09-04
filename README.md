@@ -20,39 +20,45 @@ Several prerequisites are required before compiling the code. In a Linux environ
 
 It is assumed that the XCode toolchain has been installed, this is freely available from [Apple](https://developer.apple.com/xcode/downloads/) . Once Homebrew has been installed The following commands may be run in Terminal.app to setup the prerequisties.
 
-    $ brew install mpich
-    $ brew install glfw
-    $ brew install glew
-    $ brew install freetype
+```bash
+brew install mpich
+brew install glfw
+brew install glew
+brew install freetype
+```
 
-### Raspberry Pi
+### Linux x86
+Most linux distrobutions ship with a package management system to obtain the prerequisites.
 
-On the RaspberryPi the following packages must be installed, all of which are availble through apt-get. If you used the TinySetup scripts these should already be installed
+#### Debian / Ubuntu / Raspian
+```bash
+sudo apt update
+sudo apt install openmpi-bin
+sudo apt install libglfw3
+sudo apt install glew-utils
+sudo apt install libfreetype6
+```
 
-    $ sudo apt-get install mpich
-    $ sudo apt-get install libglew-dev
+#### Fedora / RHEL
+```bash
+
+```
+
+#### Arch Linux
+```bash
+sudo pacman -Sy openmpi glfw glew freetype2
+```
 
 ## Compile and run
 Once the prerequisites have been installed TitanSPH can be compiled and run.
 
-### Macintosh
-
 To compile
 
-    $ make -f makefile_macos
+    $ make
 
 To run on a 4 core single socket computer:
 
     $ mpirun -n 4 ./bin/sph.out
-
-### Raspbery Pi
-To Compile
-
-    $ make
-
-To run on TinyTitan
-
-    $ make run
 
 ## Controls
 The input controls are set in `GLFW_utils.c` and `EGL_utils.c` for GLFW and Raspberry Pi platforms respectively. The Pi's controls are based upon using an XBox controller to handle input.
