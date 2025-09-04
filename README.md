@@ -32,7 +32,7 @@ brew install freetype
 ### Linux x86
 Most linux distrobutions ship with a package management system to obtain the prerequisites.
 
-#### Debian / Ubuntu / Raspian
+#### Debian / Ubuntu / Raspbian
 ```bash
 sudo apt update
 sudo apt install openmpi-bin
