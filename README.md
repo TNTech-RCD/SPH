@@ -14,7 +14,7 @@ With the surface reconstruction removed the underlying physics simulation can be
 
 ## Install
 
-Several prerequisites are required before compiling the code. In a Linux environment, such as Raspian, these may be obtained using your distros package management system. On Macintosh it is recomended that [Homebrew](http://brew.sh) be used.
+Several prerequisites are required before compiling the code. In a Linux environment, such as Raspberry Pi OS, these may be obtained using your distros package management system. On Macintosh it is recomended that [Homebrew](http://brew.sh) be used.
 
 Note: Make sure your graphics support OpenGL! Try running `glxgears` if unsure.
 
@@ -29,7 +29,7 @@ brew install glew
 brew install freetype
 ```
 
-### Linux x86
+### Linux
 Most linux distrobutions ship with a package management system to obtain the prerequisites.
 
 #### Debian / Ubuntu / Raspberry Pi OS
@@ -64,16 +64,27 @@ sudo dnf install libXxf86vm-devel
 sudo pacman -Sy openmpi glfw glew freetype2
 ```
 
+## Cloning the repository
+To clone the repository, use git's submodule system:
+
+```bash
+git clone https://github.com/TNTech-RCD/SPH/ --recurse-submodule
+```
+
 ## Compile and run
 Once the prerequisites have been installed TitanSPH can be compiled and run.
 
-To compile
+Note: On some systems, you may have to `module load mpi` to expose the mpi binaries.
 
-    $ make
+To compile
+```bash
+make
+```
 
 To run on a 4 core single socket computer:
-
-    $ mpirun -n 4 ./bin/sph.out
+```bash
+mpirun -n 4 ./bin/sph.out
+```
 
 ## Controls
 The input controls are set in `GLFW_utils.c` and `EGL_utils.c` for GLFW and Raspberry Pi platforms respectively. The Pi's controls are based upon using an XBox controller to handle input.
