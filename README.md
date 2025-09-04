@@ -56,6 +56,7 @@ sudo dnf install libusbx-devel libudev-devel
 sudo dnf install glew-devel
 sudo dnf install glfw-devel
 sudo dnf install freetype-devel
+sudo dnf install libXxf86vm-devel
 ```
 
 #### Arch Linux
