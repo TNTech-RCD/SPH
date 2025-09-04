@@ -16,6 +16,8 @@ With the surface reconstruction removed the underlying physics simulation can be
 
 Several prerequisites are required before compiling the code. In a Linux environment, such as Raspian, these may be obtained using your distros package management system. On Macintosh it is recomended that [Homebrew](http://brew.sh) be used.
 
+Note: Make sure your graphics support OpenGL! Try running `glxgears` if unsure.
+
 ### Macintosh
 
 It is assumed that the XCode toolchain has been installed, this is freely available from [Apple](https://developer.apple.com/xcode/downloads/) . Once Homebrew has been installed The following commands may be run in Terminal.app to setup the prerequisties.
@@ -41,7 +43,19 @@ sudo apt install libfreetype6
 
 #### Fedora / RHEL
 ```bash
+# Enable EPEL if not done already
+sudo dnf config-manager --set-enabled crb
+sudo dnf install epel-release
+sudo dnf clean all
 
+# Install Prerequisites
+sudo dnf install git
+sudo dnf install make
+sudo dnf install openmpi
+sudo dnf install libusbx-devel libudev-devel
+sudo dnf install glew-devel
+sudo dnf install glfw-devel
+sudo dnf install freetype-devel
 ```
 
 #### Arch Linux
