@@ -30,7 +30,7 @@ brew install freetype
 ```
 
 ### Linux
-Most linux distrobutions ship with a package management system to obtain the prerequisites.
+Most linux distributions ship with a package management system to obtain the prerequisites.
 
 #### Debian / Ubuntu / Raspberry Pi OS
 ```bash
