@@ -32,14 +32,6 @@ brew install freetype
 ### Linux
 Most linux distributions ship with a package management system to obtain the prerequisites.
 
-#### Debian / Ubuntu / Raspberry Pi OS
-```bash
-sudo apt update
-sudo apt install openmpi-bin
-sudo apt install libglfw3
-sudo apt install glew-utils
-sudo apt install libfreetype6
-```
 
 #### Fedora / RHEL
 ```bash
@@ -57,11 +49,6 @@ sudo dnf install glew-devel
 sudo dnf install glfw-devel
 sudo dnf install freetype-devel
 sudo dnf install libXxf86vm-devel
-```
-
-#### Arch Linux
-```bash
-sudo pacman -Sy openmpi glfw glew freetype2
 ```
 
 ## Cloning the repository
