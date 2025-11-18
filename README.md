@@ -92,6 +92,16 @@ Although subject to change generally keys should operate as follows:
 
 If the keyboard input for the RaspberyPi doesn't work you may need to correctly set `/dev/input/event#` in `get_key_press()` in `egl_util.c` 
 
+## SLURM
+A file `submit.sh` has been provided for use with the SLURM scheduler. There are two quirks to keep in mind
+
+* The biggest caveat is that a node must be registered with slurm with a graphical environment. Once identified, that node must be specified to the script.
+* `--ntasks-per-node` must be specified. It will not work with an uneven amount of tasks per node.
+
+```
+srun --ntasks-per-node <ntasks-per-node> ./submit.sh <display_node>
+```
+
 ## Code
 If you wish the modify the code here are a few things to keep in mind
 
